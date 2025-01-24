@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 
 public class Day_03 {
     
-    public static class Triangle {
+    public class Triangle {
         public int a, b, c;
     
         public Triangle(int x, int y, int z) {
@@ -21,11 +21,12 @@ public class Day_03 {
     
 
     public static void main(String[] args) {
-        System.out.println("Part 1: " + Part1());
-        System.out.println("Part 2: " + Part2());
+        Day_03 day = new Day_03();
+        System.out.println("Part 1: " + day.Part1());
+        System.out.println("Part 2: " + day.Part2());
     }
 
-    public static int Part1(){
+    public int Part1(){
         Triangle[] triangles = GetPuzzleInput();
         int answer = 0;
         for (Triangle triangle : triangles){
@@ -34,7 +35,7 @@ public class Day_03 {
         return answer;
         }
 
-        public static int Part2(){
+        public int Part2(){ //should be 1849
             Triangle[] triangles = GetPuzzleInput();
             int answer = 0;
             for (int i = 0; i < triangles.length; i += 3){
@@ -50,7 +51,7 @@ public class Day_03 {
             return answer;
         }
 
-    public static Triangle[] GetPuzzleInput(){     
+    public Triangle[] GetPuzzleInput(){     
         try{
             String input = Files.readString(Paths.get("Day_03.txt"), Charset.defaultCharset());
             String[] lines = input.split("\n");
